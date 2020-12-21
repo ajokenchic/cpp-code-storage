@@ -1,39 +1,39 @@
-#include "student1.h"
-#include <iostream>
-#include<time.h>
+// #include "student1.h"
+// #include <iostream>
+// #include<time.h>
 
-using namespace std;
+// using namespace std;
 
-int findMax(Student s[], int subj)
-{
-	int ret=0;
-		for (int i = 1; i < 10; i++)
-			if (s[ret].getGrades(subj) <s[i].getGrades(subj)) ret = i;
-	return ret;
-}
-int findMin(Student s[], int subj)
-{
-	int ret=0;
-	for (int i = 1; i < 10; i++)
-		if (s[ret].getGrades(subj) > s[i].getGrades(subj)) ret = i;
-	return ret;
-}
-int main()
-{
-	srand((unsigned int)time(NULL));
-	Student s[10];
-	string  name[10] = { "Á¶¿µÆò","¼­¿©Áø","³²Ã»¿ì","±èÇö¿ì","Á¤Áø¿µ","Á¶¿ë¿î","±èÀç¹Î","ÁÖ³ªÇö","ÀÌÀÎÀç","ÀÌÁø¿í" };
-	for (int i = 0; i < 10; i++)
-	{
-		s[i].setName(name[i]);
-		s[i].initStudent();
-	}
-	int t = findMin(s, SCI);
-	printf("°úÇĞ ÃÖÀúµæÁ¡ ÇĞ»ı: \n");
-	s[t].show();
-	cout << "Æò±Õ: " << s[t].getAvg() << " Á¡\n" << endl;
-	t = findMax(s, SCI);
-	printf("°úÇĞ ÃÖ°íµæÁ¡ ÇĞ»ı: \n");
-	s[t].show();
-	cout << "Æò±Õ: " << s[t].getAvg() << " Á¡\n" << endl;
-}
+// int findMax(Student s[], int subj)
+// {
+// 	int ret=0;
+// 		for (int i = 1; i < 10; i++)
+// 			if (s[ret].getGrades(subj) <s[i].getGrades(subj)) ret = i;
+// 	return ret;
+// }
+// int findMin(Student s[], int subj)
+// {
+// 	int ret=0;
+// 	for (int i = 1; i < 10; i++)
+// 		if (s[ret].getGrades(subj) > s[i].getGrades(subj)) ret = i;
+// 	return ret;
+// }
+// int main()
+// {
+// 	srand((unsigned int)time(NULL));
+// 	Student s[10];
+// 	string  name[10] = { "ï¿½","ï¿½","ï¿½Ã»ï¿½","ï¿½","ï¿½","ï¿½","ï¿½","ï¿½Ö³ï¿½","ï¿½","ï¿½" };
+// 	for (int i = 0; i < 10; i++)
+// 	{
+// 		s[i].setName(name[i]);
+// 		s[i].initStudent();
+// 	}
+// 	int t = findMin(s, SCI);
+// 	printf("ï¿½ ï¿½ ï¿½Ğ»ï¿½: \n");
+// 	s[t].show();
+// 	cout << "ï¿½: " << s[t].getAvg() << " ï¿½\n" << endl;
+// 	t = findMax(s, SCI);
+// 	printf("ï¿½ ï¿½Ö°ï¿½ ï¿½Ğ»ï¿½: \n");
+// 	s[t].show();
+// 	cout << "ï¿½: " << s[t].getAvg() << " ï¿½\n" << endl;
+// }

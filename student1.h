@@ -1,38 +1,38 @@
-#include<iostream>
-using namespace std;
+// #include<iostream>
+// using namespace std;
 
-#define KOR 0
-#define ENG 1
-#define MATH 2
-#define SCI 3
-#define  GEO 4
-#define CNT 5
+// #define KOR 0
+// #define ENG 1
+// #define MATH 2
+// #define SCI 3
+// #define  GEO 4
+// #define CNT 5
 
-string subjTitles[CNT] = { "±¹¾î","¿µ¾î","¼öÇÐ","°úÇÐ","Áö¸®" };
-class Student
-{
-private:
-	string name;
-	int grades[CNT];
-public:
-	Student(string _name="") { name = _name;	memset(grades, 0, sizeof(int) * 3); };
-	~Student() { };
-	void initStudent() {for (int i = 0; i < CNT; i++){	grades[i] = rand() % 101;}}
-	void setName(string _name)	{name = _name;}
-	string getName() { return name; }
-	int getGrades(int i){	return grades[i];}
-	float getAvg() 
-	{
-		int sum=0;
-		for (int i = 0; i < CNT; i++)	sum += grades[i];
-		return sum / CNT;
-	}
-	void show()
-	{
-		cout << "--------------------" << endl;
-		cout << "ÀÌ¸§: " << name << endl;
-		for (int i = 0; i < CNT; i++)	cout << subjTitles[i]<<": " << grades[i] <<" Á¡"<< endl;
-		cout << "--------------------" << endl;
-	}
-};
+// string subjTitles[CNT] = { "ï¿½","ï¿½","ï¿½","ï¿½","ï¿½" };
+// class Student
+// {
+// private:
+// 	string name;
+// 	int grades[CNT];
+// public:
+// 	Student(string _name="") { name = _name;	memset(grades, 0, sizeof(int) * 3); };
+// 	~Student() { };
+// 	void initStudent() {for (int i = 0; i < CNT; i++){	grades[i] = rand() % 101;}}
+// 	void setName(string _name)	{name = _name;}
+// 	string getName() { return name; }
+// 	int getGrades(int i){	return grades[i];}
+// 	float getAvg() 
+// 	{
+// 		int sum=0;
+// 		for (int i = 0; i < CNT; i++)	sum += grades[i];
+// 		return sum / CNT;
+// 	}
+// 	void show()
+// 	{
+// 		cout << "--------------------" << endl;
+// 		cout << "ï¿½Ì¸ï¿½: " << name << endl;
+// 		for (int i = 0; i < CNT; i++)	cout << subjTitles[i]<<": " << grades[i] <<" ï¿½"<< endl;
+// 		cout << "--------------------" << endl;
+// 	}
+// };
 

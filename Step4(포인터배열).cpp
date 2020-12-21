@@ -1,45 +1,45 @@
-#include "student1.h"
-#include <iostream>
-#include<time.h>
-#include<vector>
-using namespace std;
+// #include "student1.h"
+// #include <iostream>
+// #include<time.h>
+// #include<vector>
+// using namespace std;
 
-int findMin(Student* s[], int subj)
-{
-	int ret=0;
-	for (int i = 1; i < 10; i++)
-		if (s[ret]->getGrades(subj) > s[i]->getGrades(subj))	ret = i;
-	return ret;
-}
-int findMax(Student* s[], int subj)
-{
-	int ret = 0;
-	for (int i = 1; i < 10; i++)
-		if (s[ret]->getGrades(subj) < s[i]->getGrades(subj))	ret = i;
-	return ret;
-}
-int main()
-{
-	srand((unsigned int)time(NULL));
-	Student* s[10] = { 0, };
-	string  name[10] = { "Á¶¿µÆò","¼­¿©Áø","³²Ã»¿ì","±èÇö¿ì","Á¤Áø¿µ","Á¶¿ë¿î","±èÀç¹Î","ÁÖ³ªÇö","ÀÌÀÎÀç","ÀÌÁø¿í" };
-	for (int i = 0; i < 10; i++)
-	{
-		s[i] = new Student;
-		s[i]->setName(name[i]);
-		s[i]->initStudent();
-	}
-	//int sub = GEO;//Á¶È¸¸¦ ¿øÇÏ´Â °ú¸ñÀ» ÁöÁ¤.
-	for (int i = 0; i < 5; i++)
-	{
-		int t = findMin(s, i);
-		printf("[%s] ÃÖÀúµæÁ¡ ÇĞ»ı \n", subjTitles[i].c_str());
-		s[t]->show();
-		cout << "Æò±Õ: [ " << s[t]->getAvg() << " ] Á¡\n" << endl;
-		t = findMax(s, i);
-		printf("[%s] ÃÖ°íµæÁ¡ ÇĞ»ı \n", subjTitles[i].c_str());
-		s[t]->show();
-		cout << "Æò±Õ: [ " << s[t]->getAvg() << " ] Á¡\n" << endl;
-	}
-	for (auto t:s)	delete t;
-}
+// int findMin(Student* s[], int subj)
+// {
+// 	int ret=0;
+// 	for (int i = 1; i < 10; i++)
+// 		if (s[ret]->getGrades(subj) > s[i]->getGrades(subj))	ret = i;
+// 	return ret;
+// }
+// int findMax(Student* s[], int subj)
+// {
+// 	int ret = 0;
+// 	for (int i = 1; i < 10; i++)
+// 		if (s[ret]->getGrades(subj) < s[i]->getGrades(subj))	ret = i;
+// 	return ret;
+// }
+// int main()
+// {
+// 	srand((unsigned int)time(NULL));
+// 	Student* s[10] = { 0, };
+// 	string  name[10] = { "ï¿½","ï¿½","ï¿½Ã»ï¿½","ï¿½","ï¿½","ï¿½","ï¿½","ï¿½Ö³ï¿½","ï¿½","ï¿½" };
+// 	for (int i = 0; i < 10; i++)
+// 	{
+// 		s[i] = new Student;
+// 		s[i]->setName(name[i]);
+// 		s[i]->initStudent();
+// 	}
+// 	//int sub = GEO;//ï¿½È¸ï¿½ ï¿½Ï´ï¿½ ï¿½ ï¿½.
+// 	for (int i = 0; i < 5; i++)
+// 	{
+// 		int t = findMin(s, i);
+// 		printf("[%s] ï¿½ ï¿½Ğ»ï¿½ \n", subjTitles[i].c_str());
+// 		s[t]->show();
+// 		cout << "ï¿½: [ " << s[t]->getAvg() << " ] ï¿½\n" << endl;
+// 		t = findMax(s, i);
+// 		printf("[%s] ï¿½Ö°ï¿½ ï¿½Ğ»ï¿½ \n", subjTitles[i].c_str());
+// 		s[t]->show();
+// 		cout << "ï¿½: [ " << s[t]->getAvg() << " ] ï¿½\n" << endl;
+// 	}
+// 	for (auto t:s)	delete t;
+// }
