@@ -3,10 +3,10 @@
 #include <vector>
 using namespace std;
 
-//»çÀÌÁî ÁöÁ¤
+//ì‚¬ì´ì¦ˆ ì§€ì •
 #define x 9
 #define y 9
-//Ãâ±¸ ÁöÁ¤
+//ì¶œêµ¬ ì§€ì •
 #define exit_a 5
 #define exit_b 8
 int Maze[x][y] = { {0,} };
@@ -14,10 +14,10 @@ int Maze[x][y] = { {0,} };
 typedef struct Pos {
     int a, b;
 } Pos;
-queue<Pos>point;//ÀÔ±¸¿¡¼­ Ãâ±¸ÀÇ ·çÆ®¸¦ Ã£´Â Point
-vector<Pos>trc;//ÀÔ±¸¿¡¼­ Ãâ±¸ ·çÆ®ÀÇ ÁÂÇ¥¸¦ Ã£´Â Trace
+queue<Pos>point;//ì…êµ¬ì—ì„œ ì¶œêµ¬ì˜ ë£¨íŠ¸ë¥¼ ì°¾ëŠ” Point
+vector<Pos>trc;//ì…êµ¬ì—ì„œ ì¶œêµ¬ ë£¨íŠ¸ì˜ ì¢Œí‘œë¥¼ ì°¾ëŠ” Trace
 Pos dxy[4] = { {0,1},{-1,0},{0,-1},{1,0} };
-int initMaze() 
+int initMaze() //txtì—ì„œ ë¯¸ë¡œ ë¶ˆëŸ¬ì™€ì„œ ë¯¸ë¡œ ì´ˆê¸°í™”
 {
     FILE* fp = NULL;
     errno_t err = fopen_s(&fp, "Maze.txt", "rt");
@@ -61,17 +61,17 @@ int initMaze()
 int main() {
     int s = NULL;
     if (initMaze() != 1) return 1;
-    Maze[0][0] = -1;//½ÃÀÛÁ¡ ¼³Á¤
+    Maze[0][0] = -1;//ì‹œì‘ì  ì„¤ì •
 
     point.push({ 0, 0 });//enqueue
     while (!point.empty()) {
         Pos t = point.front();
         point.pop();
-        for (int i = 0; i < 4; i++) {//3½Ã 12½Ã 9½Ã 6½Ã ¼ø¼­·Î ÁÖº¯À» Å½»öÇÏ°í Á¶°ÇÀ» ÃæÁ·½ÃÅ³ ¶§ ¸¶´Ù ÁÂÇ¥ÀÇ µ¥ÀÌÅÍ¸¦ -1¾¿ Â÷°¨
+        for (int i = 0; i < 4; i++) {//3ì‹œ 12ì‹œ 9ì‹œ 6ì‹œ ìˆœì„œë¡œ ì£¼ë³€ì„ íƒìƒ‰í•˜ê³  ì¡°ê±´ì„ ì¶©ì¡±ì‹œí‚¬ ë•Œ ë§ˆë‹¤ ì¢Œí‘œì˜ ë°ì´í„°ë¥¼ -1ì”© ì°¨ê°
             int aa = t.a + dxy[i].a;
             int bb = t.b + dxy[i].b;
             if (aa >= 0 && bb >= 0 && aa < x && bb < y && Maze[aa][bb] == 0) {
-                point.push({ aa,bb });//Á¶°Ç¿¡ ¸ÂÀ¸¸é enqueue
+                point.push({ aa,bb });//ì¡°ê±´ì— ë§ìœ¼ë©´ enqueue
                 Maze[aa][bb] = Maze[t.a][t.b] - 1;
                 if (aa == exit_a && bb == exit_b) {
                     s = point.size();
@@ -120,8 +120,8 @@ int main() {
     {
         for (int j = 0; j < y; j++)
         {
-            if (Maze[i][j] == 77)printf("¡à");
-            else printf("¡á");
+            if (Maze[i][j] == 77)printf("â–¡");
+            else printf("â– ");
         }
         printf("\n");
     }
